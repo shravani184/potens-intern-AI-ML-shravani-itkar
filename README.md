@@ -3,7 +3,7 @@
 A production-ready **Retrieval-Augmented Generation** system that answers
 questions **only** from your documents — never from unsupported knowledge. It
 uses **semantic chunking**, `all-MiniLM-L6-v2` embeddings, **ChromaDB**, and an
-LLM (**Groq Llama 3.3 70B** or **Google Gemini**), served through a **FastAPI**
+LLM (**Groq Llama 3.3 70B**), served through a **FastAPI**
 backend and a **Streamlit** UI. It supports multilingual queries, citation-backed
 answers, confidence scoring, hallucination prevention, and cross-document
 contradiction detection.
@@ -147,7 +147,7 @@ Requires **Python 3.11+**.
 ```bash
 # 1. Clone / unzip the project, then from the project root:
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+""" Windows: """ .venv\Scripts\activate
 
 # 2. Install dependencies
 pip install -r requirements.txt
