@@ -1,0 +1,77 @@
+{
+  "description": "Retrieval evaluation set. Each item lists the question and the source document(s) that genuinely contain the answer. If you swap in your own documents, edit `relevant_sources` (and optionally `keywords`) to match. Metrics are computed at the source-document level plus an optional keyword check.",
+  "questions": [
+    {
+      "id": "q01",
+      "question": "What architecture did the 'Attention Is All You Need' paper introduce?",
+      "relevant_sources": ["attention_is_all_you_need.pdf"],
+      "keywords": ["transformer", "attention"]
+    },
+    {
+      "id": "q02",
+      "question": "What is scaled dot-product attention?",
+      "relevant_sources": ["attention_is_all_you_need.pdf"],
+      "keywords": ["scaled dot-product", "softmax"]
+    },
+    {
+      "id": "q03",
+      "question": "How does BERT pre-train language representations?",
+      "relevant_sources": ["bert.pdf"],
+      "keywords": ["masked language model", "bidirectional"]
+    },
+    {
+      "id": "q04",
+      "question": "What are the two unsupervised tasks used to pre-train BERT?",
+      "relevant_sources": ["bert.pdf"],
+      "keywords": ["masked", "next sentence"]
+    },
+    {
+      "id": "q05",
+      "question": "What is few-shot learning as described in the GPT-3 paper?",
+      "relevant_sources": ["gpt3_language_models_few_shot.pdf"],
+      "keywords": ["few-shot", "in-context"]
+    },
+    {
+      "id": "q06",
+      "question": "How many parameters does the GPT-3 model have?",
+      "relevant_sources": ["gpt3_language_models_few_shot.pdf"],
+      "keywords": ["175 billion", "parameters"]
+    },
+    {
+      "id": "q07",
+      "question": "What improvements does Llama 2 make over the previous version?",
+      "relevant_sources": ["llama2.pdf"],
+      "keywords": ["llama 2", "fine-tuned"]
+    },
+    {
+      "id": "q08",
+      "question": "How was Llama 2-Chat fine-tuned for dialogue use cases?",
+      "relevant_sources": ["llama2.pdf"],
+      "keywords": ["reinforcement learning", "human feedback"]
+    },
+    {
+      "id": "q09",
+      "question": "What is retrieval-augmented generation?",
+      "relevant_sources": ["retrieval_augmented_generation.pdf"],
+      "keywords": ["retrieval", "generation", "parametric"]
+    },
+    {
+      "id": "q10",
+      "question": "What two types of memory does the RAG model combine?",
+      "relevant_sources": ["retrieval_augmented_generation.pdf"],
+      "keywords": ["parametric", "non-parametric"]
+    },
+    {
+      "id": "q11",
+      "question": "Why do Transformers use positional encodings?",
+      "relevant_sources": ["attention_is_all_you_need.pdf"],
+      "keywords": ["positional encoding", "order"]
+    },
+    {
+      "id": "q12",
+      "question": "How does in-context learning avoid gradient updates in GPT-3?",
+      "relevant_sources": ["gpt3_language_models_few_shot.pdf"],
+      "keywords": ["without", "gradient", "in-context"]
+    }
+  ]
+}
