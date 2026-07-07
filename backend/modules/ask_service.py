@@ -77,6 +77,8 @@ def answer_question(
     chunks = retrieve(english_query, top_k=top_k, source_filter=source_filter)
     retrieved_models = _retrieved_models(chunks)
 
+    logger.info("Retrieved: %s", [(c["source"], c["page"], round(c["similarity"], 3)) for c in chunks])
+
     top_similarity = chunks[0]["similarity"] if chunks else 0.0
 
     if not chunks or top_similarity < settings.min_retrieval_similarity:
