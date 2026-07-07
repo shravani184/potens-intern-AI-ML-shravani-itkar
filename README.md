@@ -3,7 +3,7 @@
 A production-ready **Retrieval-Augmented Generation** system that answers
 questions **only** from your documents — never from unsupported knowledge. It
 uses **semantic chunking**, `all-MiniLM-L6-v2` embeddings, **ChromaDB**, and an
-LLM (**Groq Llama 3.3 70B**), served through a **FastAPI**
+LLM (**Groq Llama 3.3 70B** or **Google Gemini**), served through a **FastAPI**
 backend and a **Streamlit** UI. It supports multilingual queries, citation-backed
 answers, confidence scoring, hallucination prevention, and cross-document
 contradiction detection.
@@ -147,7 +147,7 @@ Requires **Python 3.11+**.
 ```bash
 # 1. Clone / unzip the project, then from the project root:
 python -m venv .venv
-""" Windows: """ .venv\Scripts\activate
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
 
 # 2. Install dependencies
 pip install -r requirements.txt
@@ -456,13 +456,11 @@ to match them.
 
 ---
 
-## Code quality notes
+## AI Use Log
 
-- Modular architecture with business logic (`modules/`) separated from HTTP
-  routes (`routes/`).
-- Type hints and docstrings throughout; PEP 8 style.
-- Central configuration via `pydantic-settings` and `.env` (no hard-coded
-  secrets).
-- Robust error handling with domain-specific exceptions and structured logging.
-- Graceful degradation: missing NLTK data → regex splitter; translation failure
-  → treat as English; reranker failure → fall back to vector scores.
+| Tool                     | Approximate Usage            | Purpose                                                                                                                             |
+| ------------------------ | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| ChatGPT (OpenAI GPT-5.5) | ~60-100k tokens (estimated)  | Assisted with semantic chunking design, FastAPI implementation, debugging, retrieval pipeline troubleshooting.                      |
+| Claude (Anthropic)       | ~100-130k tokens (estimated) | Implementation and debugging support — writing module/route code from my design, troubleshooting the retrieval/generation pipeline. |
+
+**Note:** Token counts are estimates based on the overall project conversations and were not measured directly.
