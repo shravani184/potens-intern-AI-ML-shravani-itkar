@@ -126,6 +126,7 @@ class LLMClient:
             fallback=settings.insufficient_context_message,
         )
         raw = self._chat(ANSWER_SYSTEM_PROMPT, user)
+        logger.info("Raw LLM answer: %s", raw)
         return _parse_json(
             raw,
             default={
