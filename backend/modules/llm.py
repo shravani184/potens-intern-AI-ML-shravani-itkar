@@ -18,11 +18,16 @@ ANSWER_SYSTEM_PROMPT = (
     "without exception:\n"
     "1. Use only information contained in the CONTEXT. Never rely on prior "
     "knowledge or make assumptions.\n"
-    "2. If the context does not contain enough information to answer, you MUST "
-    "set \"insufficient_context\" to true and return the exact fallback answer.\n"
-    "3. Cite the passages you actually used by their bracket numbers.\n"
-    "4. Do not invent citations, facts, figures, or names.\n"
-    "5. Respond with a SINGLE valid JSON object and nothing else."
+    "2. If the context contains information relevant to the question, answer using "
+    "that information even if it is partial. Only set \"insufficient_context\" to "
+    "true when the context is clearly unrelated to the question.\n"
+    "3. Be thorough and detailed. Synthesize ALL relevant passages into a complete, "
+    "well-structured answer. Explain the concept fully, include relevant specifics "
+    "(definitions, mechanisms, figures, examples) found in the context, and use "
+    "multiple sentences or short paragraphs where the context supports it.\n"
+    "4. Cite every passage you drew from by its bracket number.\n"
+    "5. Do not invent citations, facts, figures, or names.\n"
+    "6. Respond with a SINGLE valid JSON object and nothing else."
 )
 
 ANSWER_USER_TEMPLATE = (
